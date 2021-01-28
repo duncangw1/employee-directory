@@ -1,6 +1,6 @@
 import React from "react";
 
-function TableHeader(props) {
+function TableHeader() {
   return (
     <thead>
       <tr>

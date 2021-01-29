@@ -3,7 +3,7 @@ import React from "react";
 function TableCard({ ssn, image, firstName, lastName, phone, email, dob }) {
   return (
     <tbody>
-      <tr>
+      <tr id={firstName.toLowerCase()}>
         <th scope="row" key={ssn}>
           <img
             src={image}

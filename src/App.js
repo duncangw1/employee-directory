@@ -10,13 +10,37 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
-  console.log("users: ", users);
+  const [userSearch, setUserSearch] = useState("");
 
   useEffect(() => {
     API.randomUsers().then((res) => {
       setUsers(res.data.results);
     });
   }, []);
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    console.log("value: ", value);
+    setUserSearch(value);
+    console.log("userSearch: ", userSearch);
+
+    for (let i = 0; i < users.length; i++) {
+      const userName = users[i].name.first.toLowerCase();
+      console.log("userName: ", userName);
+      const startingFilter = userName.startsWith(value);
+      console.log("startingFilter: ", startingFilter);
+      if (startingFilter === false) {
+        const userToHide = users[i];
+        console.log("user to hide: ", userToHide);
+        document.getElementById(userName).style.display = "none";
+      } else {
+        document.getElementById(userName).style.display = "";
+      }
+      if (value === "") {
+        document.getElementById(userName).style.display = "";
+      }
+    }
+  };
 
   function formatDob(date) {
     const dateArray = date.split("-");
@@ -25,7 +49,6 @@ function App() {
     const dayArray = dateArray[2].split("T");
     const day = dayArray[0];
     const formattedDate = [month, day, year].join("-");
-    console.log("Formatted: ", formattedDate);
     return formattedDate;
   }
 
@@ -33,7 +56,12 @@ function App() {
     <div className="App">
       <Wrapper>
         <Header />
-        <SearchForm />
+        <SearchForm
+          value={userSearch}
+          onChange={handleInputChange}
+          placeholder="Search Employee..."
+          name="employee"
+        />
         <div className="container">
           <table className="table mt-4 table-hover">
             <TableHeader />

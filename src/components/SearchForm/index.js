@@ -6,13 +6,10 @@ function SearchForm(props) {
     <div className="card p-3 align-items-center">
       <form className="search">
         <input
-          value={props.searchValue}
-          onChange={props.handleInputChange}
-          name="employee"
-          list="employees"
-          type="text"
+          id="searchbox"
+          type="search"
           className="form-control"
-          placeholder="Search Employee..."
+          {...props}
         />
       </form>
     </div>

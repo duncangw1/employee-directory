@@ -18,6 +18,17 @@ function App() {
     });
   }, []);
 
+  function formatDob(date) {
+    const dateArray = date.split("-");
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const dayArray = dateArray[2].split("T");
+    const day = dayArray[0];
+    const formattedDate = [month, day, year].join("-");
+    console.log("Formatted: ", formattedDate);
+    return formattedDate;
+  }
+
   return (
     <div className="App">
       <Wrapper>
@@ -35,7 +46,7 @@ function App() {
                   lastName={user.name.last}
                   phone={user.phone}
                   email={user.email}
-                  dob={user.dob.date}
+                  dob={formatDob(user.dob.date)}
                 />
               );
             })}

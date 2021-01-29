@@ -10,10 +10,10 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
+  console.log("users: ", users);
 
   useEffect(() => {
     API.randomUsers().then((res) => {
-      console.log(res.data.results);
       setUsers(res.data.results);
     });
   }, []);
@@ -24,9 +24,21 @@ function App() {
         <Header />
         <SearchForm />
         <div className="container">
-          <table className="table mt-4">
+          <table className="table mt-4 table-hover">
             <TableHeader />
-            <TableCard />
+            {users.map((user) => {
+              return (
+                <TableCard
+                  key={user.id.value}
+                  image={user.picture.thumbnail}
+                  firstName={user.name.first}
+                  lastName={user.name.last}
+                  phone={user.phone}
+                  email={user.email}
+                  dob={user.dob.date}
+                />
+              );
+            })}
           </table>
         </div>
       </Wrapper>

@@ -1,21 +1,19 @@
 import React from "react";
 
-function TableCard(props) {
+function TableCard({ ssn, image, firstName, lastName, phone, email, dob }) {
   return (
     <tbody>
       <tr>
-        <th scope="row">image</th>
-        <td>name name</td>
-        <td>919 900 9999</td>
-        <td>email@email.com</td>
-        <td>12/2/1991</td>
-      </tr>
-      <tr>
-        <th scope="row">image</th>
-        <td>name name</td>
-        <td>919 900 9999</td>
-        <td>email@email.com</td>
-        <td>12/2/1991</td>
+        <th scope="row" key={ssn}>
+          <img
+            src={image}
+            alt={firstName + " " + lastName + " thumbnail image"}
+          />
+        </th>
+        <td>{firstName + " " + lastName}</td>
+        <td>{phone}</td>
+        <td>{email}</td>
+        <td>{dob}</td>
       </tr>
     </tbody>
   );

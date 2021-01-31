@@ -63,7 +63,7 @@ function App() {
           name="employee"
         />
         <div className="container">
-          <table className="table mt-4 table-hover">
+          <table className="table mt-4 table-hover table-bordered">
             <TableHeader />
             {users.map((user) => {
               return (

@@ -4,7 +4,7 @@
 
 ## Description
 
-The purpose of the Employee Directory application is to... Please view the deployed application [here](https://duncangw1.github.io/employee-directory/) or navigate to the [Installation](#installation) section below for instructions on how to run the application locally.
+The purpose of the Employee Directory application is to allow an employee or manager to be able to view non-sensitive data about other employees. The Employee Directory was built using React, allowing the structure of the application to be broken up into UI components and allowing for the application to respond to user events (filtering employees by name). Please view the deployed application [here](https://duncangw1.github.io/employee-directory/) or navigate to the [Installation](#installation) section below for instructions on how to run the application locally.
 
 ## Table of Contents
 
@@ -23,15 +23,15 @@ _How to install & get the application running._
 - Navigate to the local file in **VS Code** and open the integrated terminal
 - Install dependencies using `npm i`
 - Invoke the application using `npm start`
-- Navigate to **localhost:3000** in a web browser to view the app!
+- Navigate to **localhost:3000** in a web browser to view the app! (This will open automatically in the default browser after running `npm start`)
 
 ## Usage
 
 _Guidelines for usage & application demo._
 
-To use this application... Please reference the gif below to see a demo of the app in action.
+To use this application you may simply browse the employee table to see the desired information for each employee. You may also type in the search bar to filter the employees by their first name. Please reference the gif below to see a demo of the app in action.
 
-![Employee Directory Demo](#)
+![Employee Directory Demo](public/assets/images/EmployeeDirectory.gif)
 
 ## Licenses
 

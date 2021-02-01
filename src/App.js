@@ -20,18 +20,18 @@ function App() {
 
   const handleInputChange = (event) => {
     const { value } = event.target;
-    console.log("value: ", value);
+    // console.log("value: ", value);
     setUserSearch(value);
-    console.log("userSearch: ", userSearch);
+    // console.log("userSearch: ", userSearch);
 
     for (let i = 0; i < users.length; i++) {
       const userName = users[i].name.first.toLowerCase();
-      console.log("userName: ", userName);
+      // console.log("userName: ", userName);
       const startingFilter = userName.startsWith(value);
-      console.log("startingFilter: ", startingFilter);
+      // console.log("startingFilter: ", startingFilter);
       if (startingFilter === false) {
-        const userToHide = users[i];
-        console.log("user to hide: ", userToHide);
+        // const userToHide = users[i];
+        // console.log("user to hide: ", userToHide);
         document.getElementById(userName).style.display = "none";
       } else {
         document.getElementById(userName).style.display = "";
